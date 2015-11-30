@@ -43,7 +43,7 @@ Getting a database connection
 
 To let ***noovodb*** manage the database connection, you just need to add an ***abstract***  in the same package as your DAO classes like this
 
-```
+```java
 ...
 import com.noovop.noovodb.manager.DbManager;
 import com.noovop.noovodb.service.CrudService;
@@ -79,7 +79,7 @@ To make the things more organized, we recommend you to write an **SQLContant** t
 
 For example, for a single Contact entity class, the constants will look like :
 
-```
+```java
 package com.noovop.noovodb.example.constant;
 
 /**
@@ -118,14 +118,14 @@ These are the descriptions :
 
 ###**Table name**
 
-```
+```java
 public final static String TABLE_NAME = "CONTACT"
 ```
 This is just the table for contact entity
 
 ###**Table sequence**
 
-```
+```java
     public final static String SEQUENCE_NAME        = "CONTACT_SEQ";
 ```
 Use recommend to use sequences for ID columns generation.  
@@ -142,13 +142,13 @@ In SQL queries templates, the values are replaced by question mark (**?**) .
 
 Example :
 
-```
+```sql
 SELECT * FROM CONTACT WHERE ID = ?
 ```
 
 The ID is a parameter for this query. An example the complete query can be
 
-```
+```sql
 SELECT * FROM CONTACT WHERE ID = 40
 ```
 
@@ -159,7 +159,7 @@ Each DAO class just need to extend your **AbstractDao** class.
 
 Let say, we want to create a ContactDao class for our contact table, it will look like :
 
-```
+```java
 ...
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -173,7 +173,7 @@ public class ContactDao extends AbstractDao<Contact>{
 
 We know need to implement the methods of getResult method to defined bean wiring and mapping.
 
-```
+```java
 ...
   /**
    * The implentation for contact bean.
@@ -201,7 +201,7 @@ We know need to implement the methods of getResult method to defined bean wiring
 
 As our DAO provide CRUD service, we need to implement the other methods. This is the implementation of buildCreateQuery method :
 
-```
+```java
 ...
   /**
    * Builder the Insert Query of bean creation to datatabas
@@ -228,7 +228,7 @@ You have to implement the following methods :
 The complete example project
 -------------
 
-You can get the complete example project at [noovodb example](https://github.com/noovop/noovodp/examples)
+You can get the complete example project at [noovodb example](https://github.com/noovop/noovodb/tree/master/examples)
 
 Table of content
 ===
