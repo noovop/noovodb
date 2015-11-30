@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.noovop</groupId>
+	<artifactId>noovodbexample</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>noovodbexample</name>
+	<url>http://maven.apache.org</url>
+	<description>An example of projet using noovodb API</description>
+
+	<!-- Organization information -->
+	<organization>
+		<name>Noovop</name>
+		<url>http://www.noovop.com</url>
+	</organization>
+
+	<!-- Project licence -->
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<distribution>repo</distribution>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+		</license>
+	</licenses>
+
+	<!-- Properties -->
+	<properties>
+		<junit.version>4.11</junit.version>
+		<maven.plugin.version>3.1</maven.plugin.version>
+		<jdk.version>1.7</jdk.version>
+		<postgresql.version>9.3-1102-jdbc41</postgresql.version>
+		<noovodb.version>1.0</noovodb.version>
+		<common.log>1.2.17</common.log>
+	</properties>
+
+	<dependencies>
+
+		<!-- NoovOpDB Lib -->
+		<dependency>
+			<groupId>com.noovop</groupId>
+			<artifactId>noovodb</artifactId>
+			<version>${noovodb.version}</version>
+		</dependency>
+
+		<!-- JUnit Lib -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- PostgreSQL JDBC Lib. You can import the JDBC for the database you're 
+			using -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- Build -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.plugin.version}</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
